@@ -2,20 +2,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    direction: rtl;
 }
 
 :root {
     --primary-color: #2563eb;
-    --secondary-color: #0284c7;
+    --secondary-color: #1e40af;
     --accent-color: #22c55e;
     --text-color: #1f2937;
-    --background-color: #f8fafc;
+    --background-color: #f3f4f6;
     --card-background: #ffffff;
-    --border-color: #e2e8f0;
+    --border-color: #e5e7eb;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Heebo', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
@@ -42,21 +43,28 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 1rem;
-    max-width: 1100px;
-    margin: 0 auto;
+    padding: 1rem 2rem;
+    background-color: var(--card-background);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin-right: 2rem;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 1.5rem;
+    margin-left: 2rem;
 }
 
 nav ul li a {
@@ -83,6 +91,7 @@ nav ul li a:hover {
     max-width: 800px;
     margin: 0 auto;
     padding: 1.5rem 1rem;
+    text-align: right;
 }
 
 .hero-content h1 {
@@ -138,12 +147,17 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    justify-content: center;
+    font-size: 0.9rem;
+    margin-left: 20px;
+    margin-right: 0;
 }
 
 /* Services Section */
 .services {
     padding: 3rem 0;
     background-color: var(--background-color);
+    text-align: right;
 }
 
 .service-grid {
@@ -158,7 +172,7 @@ nav ul li a:hover {
     padding: 1.5rem;
     border-radius: 0.8rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    text-align: center;
+    text-align: right;
     transition: transform 0.3s ease;
 }
 
@@ -186,6 +200,7 @@ nav ul li a:hover {
 .pricing {
     padding: 3rem 0;
     background-color: white;
+    text-align: right;
 }
 
 .pricing-grid {
@@ -200,7 +215,7 @@ nav ul li a:hover {
     padding: 1.5rem;
     border-radius: 0.8rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    text-align: center;
+    text-align: right;
     border: 1px solid var(--border-color);
     transition: transform 0.3s ease;
 }
@@ -241,6 +256,7 @@ nav ul li a:hover {
 .contact {
     padding: 3rem 0;
     background-color: var(--background-color);
+    text-align: right;
 }
 
 .contact-container {
@@ -255,7 +271,7 @@ nav ul li a:hover {
     background-color: var(--card-background);
     padding: 1.5rem;
     border-radius: 0.8rem;
-    text-align: center;
+    text-align: right;
 }
 
 .contact-info p {
@@ -292,6 +308,7 @@ nav ul li a:hover {
     border-radius: 0.5rem;
     font-family: inherit;
     font-size: 0.95rem;
+    text-align: right;
 }
 
 .contact textarea {
@@ -312,6 +329,7 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
     margin-bottom: 1.5rem;
+    text-align: right;
 }
 
 .footer-section h4 {
@@ -337,6 +355,11 @@ footer {
     justify-content: center;
 }
 
+.social-links a {
+    margin-left: 15px;
+    margin-right: 0;
+}
+
 .footer-bottom {
     text-align: center;
     padding-top: 1.5rem;
@@ -348,26 +371,19 @@ footer {
 @media screen and (max-width: 768px) {
     .hero-content h1 {
         font-size: 2rem;
-        padding: 0 1rem;
-    }
-    
-    .hero-content .subtitle {
-        font-size: 1.1rem;
-        padding: 0 1rem;
-    }
-    
-    nav ul {
-        display: none; /* We'll add a mobile menu later */
     }
     
     .service-grid,
     .pricing-grid {
         grid-template-columns: 1fr;
-        padding: 1rem;
     }
     
     .contact-container {
-        padding: 0 1rem;
+        flex-direction: column;
+    }
+    
+    .contact-info {
+        margin-bottom: 2rem;
     }
     
     .trust-badges {

@@ -2,7 +2,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Form handling
     const contactForm = document.getElementById('contact-form');
     
-    contactForm.addEventListener('submit', (e) => {
+    const validatePhone = (phone) => {
+        // Israeli phone number validation
+        const phoneRegex = /^(?:(?:(\+972)|(0))(?:-)?([23489])\d{7})$/;
+        return phoneRegex.test(phone.replace(/[-\s]/g, ''));
+    };
+
+    contactForm.querySelector('input[name="phone"]').addEventListener('input', (e) => {
+        const phone = e.target.value.replace(/[-\s]/g, '');
+        if (phone && !validatePhone(phone)) {
+            e.target.setCustomValidity('אנא הכנס מספר טלפון תקין');
+        } else {
+            e.target.setCustomValidity('');
+        }
+    });
+
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
         // Form validation
@@ -13,26 +28,24 @@ document.addEventListener('DOMContentLoaded', () => {
         const message = contactForm.querySelector('textarea[name="message"]').value.trim();
 
         if (!name || !email || !phone || !service || !message) {
-            showNotification('Please fill out all fields', 'error');
+            showNotification('אנא מלא את כל השדות', 'error');
+            return;
+        }
+
+        if (!validatePhone(phone)) {
+            showNotification('אנא הכנס מספר טלפון תקין', 'error');
             return;
         }
 
         // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-            showNotification('Please enter a valid email address', 'error');
-            return;
-        }
-
-        // Phone validation
-        const phoneRegex = /^\+?[\d\s-]{10,}$/;
-        if (!phoneRegex.test(phone)) {
-            showNotification('Please enter a valid phone number', 'error');
+            showNotification('אנא הכנס כתובת אימייל תקינה', 'error');
             return;
         }
 
         // Simulate form submission
-        showNotification('Thank you! We will contact you shortly.', 'success');
+        showNotification('הטופס נשלח בהצלחה! נחזור אליך בהקדם.', 'success');
         contactForm.reset();
     });
 
@@ -40,13 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            const headerOffset = 80;
-            const elementPosition = target.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-            window.scrollTo({
-                top: offsetPosition,
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth'
             });
         });
