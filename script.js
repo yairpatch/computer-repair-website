@@ -1,4 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        const isOpen = navLinks.classList.contains('active');
+        menuToggle.querySelector('i').classList.toggle('fa-bars', !isOpen);
+        menuToggle.querySelector('i').classList.toggle('fa-times', isOpen);
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.mobile-menu') && !e.target.closest('.nav-links')) {
+            navLinks.classList.remove('active');
+            menuToggle.querySelector('i').classList.add('fa-bars');
+            menuToggle.querySelector('i').classList.remove('fa-times');
+        }
+    });
+
+    // Close menu when clicking on a link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuToggle.querySelector('i').classList.add('fa-bars');
+            menuToggle.querySelector('i').classList.remove('fa-times');
+        });
+    });
+
     // Form handling
     const contactForm = document.getElementById('contact-form');
     
