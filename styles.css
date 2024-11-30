@@ -1,18 +1,21 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    direction: rtl;
-}
-
 :root {
     --primary-color: #2563eb;
     --secondary-color: #1e40af;
     --accent-color: #22c55e;
     --text-color: #1f2937;
-    --background-color: #f3f4f6;
+    --text-light: #6b7280;
+    --background-color: #f8fafc;
     --card-background: #ffffff;
     --border-color: #e5e7eb;
+    --shadow: 0 2px 4px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    direction: rtl;
 }
 
 body {
@@ -23,29 +26,19 @@ body {
 }
 
 .container {
-    width: 100%;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
 }
 
 /* Navigation */
-header {
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem;
     background-color: var(--card-background);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow);
     position: fixed;
     top: 0;
     left: 0;
@@ -53,35 +46,49 @@ nav {
     z-index: 1000;
 }
 
-nav ul {
+.logo {
+    margin-right: auto;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+}
+
+.nav-links {
     display: flex;
     gap: 2rem;
     list-style: none;
-    margin-right: 2rem;
+    margin: 0 2rem;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-left: 2rem;
-}
-
-nav ul li a {
+.nav-links a {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
-    transition: color 0.3s ease;
-    font-size: 0.95rem;
+    transition: var(--transition);
 }
 
-nav ul li a:hover {
+.nav-links a:hover {
     color: var(--primary-color);
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 0.5rem;
 }
 
 /* Hero Section */
 .hero {
-    padding: 5rem 0 3rem;
+    padding: 8rem 1rem 4rem;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     text-align: center;
@@ -90,38 +97,48 @@ nav ul li a:hover {
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
-    padding: 1.5rem 1rem;
-    text-align: right;
 }
 
-.hero-content h1 {
-    font-size: 2.5rem;
+.hero h1 {
+    font-size: 3rem;
     margin-bottom: 1rem;
-    line-height: 1.2;
 }
 
-.hero-content .subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+.hero .subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
     opacity: 0.9;
 }
 
-.cta-buttons {
+/* Trust Badges */
+.trust-badges {
     display: flex;
-    gap: 1rem;
     justify-content: center;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 3rem;
 }
 
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+}
+
+.badge i {
+    font-size: 1.5rem;
+}
+
+/* Buttons */
 .btn {
     display: inline-block;
-    padding: 0.7rem 1.2rem;
+    padding: 0.8rem 1.5rem;
     border-radius: 0.5rem;
     text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
+    font-weight: 500;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
 }
 
 .btn-primary {
@@ -132,286 +149,289 @@ nav ul li a:hover {
 .btn-secondary {
     background-color: rgba(255, 255, 255, 0.1);
     color: white;
-    border: 2px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.trust-badges {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    font-size: 0.9rem;
+.btn-primary:hover {
+    background-color: #1ea350;
 }
 
-.trust-badges span {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    justify-content: center;
-    font-size: 0.9rem;
-    margin-left: 20px;
-    margin-right: 0;
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Services Section */
 .services {
-    padding: 3rem 0;
-    background-color: var(--background-color);
-    text-align: right;
+    padding: 4rem 1rem;
+}
+
+.services h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
 }
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-    padding: 1.5rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
 }
 
 .service-card {
     background-color: var(--card-background);
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: 0.8rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    text-align: right;
-    transition: transform 0.3s ease;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
 }
 
-.service-card i {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 0.8rem;
-}
-
-.service-card h3 {
-    margin-bottom: 0.8rem;
-    font-size: 1.2rem;
-}
-
-.service-card p {
-    font-size: 0.9rem;
-    color: #666;
-}
-
 /* Pricing Section */
 .pricing {
-    padding: 3rem 0;
-    background-color: white;
-    text-align: right;
+    padding: 4rem 1rem;
+    background-color: var(--background-color);
+}
+
+.pricing h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
 }
 
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    padding: 1.5rem 0;
+    gap: 2rem;
+    padding: 1rem;
 }
 
 .pricing-card {
     background-color: var(--card-background);
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: 0.8rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    text-align: right;
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s ease;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
 }
 
-.pricing-card.featured {
-    border: 2px solid var(--primary-color);
-    transform: scale(1.02);
+.pricing-header {
+    margin-bottom: 2rem;
 }
 
-.pricing-card:hover {
-    transform: translateY(-5px);
-}
-
-.pricing-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.8rem;
-}
-
-.pricing-card .price {
-    font-size: 2rem;
+.price {
+    font-size: 2.5rem;
     font-weight: 700;
     color: var(--primary-color);
-    margin: 0.8rem 0;
+    margin: 1rem 0;
 }
 
 .pricing-card ul {
     list-style: none;
-    margin: 1.2rem 0;
-    font-size: 0.9rem;
+    margin: 2rem 0;
 }
 
-.pricing-card ul li {
-    padding: 0.4rem 0;
-    border-bottom: 1px solid var(--border-color);
+.pricing-card li {
+    margin: 1rem 0;
+    color: var(--text-light);
+}
+
+.pricing-card li i {
+    color: var(--accent-color);
+    margin-left: 0.5rem;
+}
+
+.pricing-card.featured {
+    transform: scale(1.05);
+    border: 2px solid var(--primary-color);
 }
 
 /* Contact Section */
 .contact {
-    padding: 3rem 0;
-    background-color: var(--background-color);
-    text-align: right;
+    padding: 4rem 1rem;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
 }
 
 .contact-container {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    max-width: 800px;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .contact-info {
     background-color: var(--card-background);
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: 0.8rem;
-    text-align: right;
+    box-shadow: var(--shadow);
 }
 
-.contact-info p {
-    margin: 0.8rem 0;
+.info-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    justify-content: center;
-    font-size: 0.95rem;
-}
-
-.business-hours {
-    margin-top: 1.5rem;
-}
-
-.business-hours p {
-    font-size: 0.9rem;
-}
-
-.contact form {
-    display: flex;
-    flex-direction: column;
     gap: 1rem;
-    background-color: var(--card-background);
-    padding: 1.5rem;
-    border-radius: 0.8rem;
+    margin: 1.5rem 0;
 }
 
-.contact input,
-.contact select,
-.contact textarea {
-    padding: 0.7rem;
-    border: 1px solid var(--border-color);
-    border-radius: 0.5rem;
-    font-family: inherit;
-    font-size: 0.95rem;
-    text-align: right;
-}
-
-.contact textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
-/* Footer */
-footer {
-    background-color: var(--text-color);
-    color: white;
-    padding: 2rem 0 1rem;
-    font-size: 0.9rem;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-    text-align: right;
-}
-
-.footer-section h4 {
-    margin-bottom: 0.8rem;
-    font-size: 1rem;
-}
-
-.footer-section ul li {
-    margin: 0.4rem 0;
-}
-
-.footer-section ul li a {
-    color: white;
-    text-decoration: none;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-    font-size: 0.9rem;
+.info-item i {
+    font-size: 1.25rem;
+    color: var(--primary-color);
 }
 
 .social-links {
     display: flex;
     gap: 1rem;
-    justify-content: center;
+    margin-top: 2rem;
 }
 
-.social-links a {
-    margin-left: 15px;
-    margin-right: 0;
+.social-link {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    color: var(--secondary-color);
+}
+
+.contact-form {
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 0.8rem;
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Footer */
+footer {
+    background-color: var(--card-background);
+    padding: 4rem 1rem 1rem;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    height: 30px;
+    margin-bottom: 1rem;
+}
+
+.footer-section h4 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin: 0.5rem 0;
+}
+
+.footer-section a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-section a:hover {
+    color: var(--primary-color);
 }
 
 .footer-bottom {
     text-align: center;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.85rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-light);
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    .hero-content h1 {
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .mobile-menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background-color: var(--card-background);
+        padding: 1rem;
+        box-shadow: var(--shadow);
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero h1 {
         font-size: 2rem;
     }
-    
-    .service-grid,
-    .pricing-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .contact-container {
-        flex-direction: column;
-    }
-    
-    .contact-info {
-        margin-bottom: 2rem;
-    }
-    
+
     .trust-badges {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
     }
-    
-    .cta-buttons {
-        flex-direction: column;
-        padding: 0 2rem;
+
+    .contact-container {
+        grid-template-columns: 1fr;
     }
-    
-    .btn {
-        width: 100%;
-        text-align: center;
-    }
-    
+
     .pricing-card.featured {
         transform: none;
-    }
-    
-    .footer-content {
-        text-align: center;
-    }
-    
-    .footer-section {
-        margin-bottom: 1.5rem;
     }
 }
 
@@ -427,6 +447,19 @@ footer {
     }
 }
 
-.animate {
-    animation: fadeIn 0.6s ease forwards;
+.service-card,
+.pricing-card {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.service-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.service-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.service-card:nth-child(4) {
+    animation-delay: 0.6s;
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+    <!-- Laptop base -->
+    <rect x="10" y="25" width="30" height="2" fill="#2563eb"/>
+    <path d="M8 25 L42 25 L45 35 L5 35 Z" fill="#2563eb"/>
+    
+    <!-- Laptop screen -->
+    <rect x="12" y="10" width="26" height="15" fill="#2563eb" rx="2"/>
+    <rect x="14" y="12" width="22" height="11" fill="white" rx="1"/>
+    
+    <!-- Mobile service arrows -->
+    <path d="M50 25 L60 15 L70 25" stroke="#2563eb" stroke-width="3" fill="none"/>
+    <path d="M50 25 L60 35 L70 25" stroke="#2563eb" stroke-width="3" fill="none"/>
+    
+    <!-- Van icon -->
+    <path d="M75 30 L85 30 L90 25 L95 25 L98 30 L98 35 L75 35 Z" fill="#2563eb"/>
+    <circle cx="80" cy="35" r="2" fill="#1e40af"/>
+    <circle cx="93" cy="35" r="2" fill="#1e40af"/>
+    
+    <!-- Hebrew Text -->
+    <text x="110" y="32" font-family="Heebo" font-size="24" font-weight="700" fill="#2563eb">טכנייד</text>
+</svg>

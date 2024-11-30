@@ -3,38 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>תיקון מחשבים - שירות מקצועי ואמין</title>
+    <title>טכנייד - שירות תיקון מחשבים עד הבית</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <header>
             <nav>
-                <div class="logo">TechFix Pro</div>
-                <ul>
+                <div class="mobile-menu">
+                    <button class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <ul class="nav-links">
                     <li><a href="#home">ראשי</a></li>
                     <li><a href="#services">שירותים</a></li>
                     <li><a href="#pricing">מחירים</a></li>
                     <li><a href="#contact">צור קשר</a></li>
                 </ul>
+                <div class="logo">
+                    <img src="images/logo.svg" alt="טכנייד - שירות תיקון מחשבים" class="logo-img">
+                </div>
             </nav>
         </header>
 
         <main>
             <section id="home" class="hero">
                 <div class="hero-content">
-                    <h1>שירותי תיקון מחשבים מקצועיים</h1>
-                    <p class="subtitle">שירות מהיר, אמין ובמחירים הוגנים</p>
+                    <h1>תיקון מחשבים בבית הלקוח</h1>
+                    <p class="subtitle">אנחנו אוספים, מתקנים, ומחזירים - בלי שתצטרכו לצאת מהבית!</p>
                     <div class="cta-buttons">
-                        <a href="#contact" class="btn btn-primary">צור קשר עכשיו</a>
-                        <a href="#services" class="btn btn-secondary">השירותים שלנו</a>
+                        <a href="#contact" class="btn btn-primary">הזמן תיקון עכשיו</a>
+                        <a href="#pricing" class="btn btn-secondary">המחירים שלנו</a>
                     </div>
                     <div class="trust-badges">
-                        <span><i class="fas fa-check-circle"></i> שירות באותו יום</span>
-                        <span><i class="fas fa-shield-alt"></i> אחריות ל-90 יום</span>
-                        <span><i class="fas fa-star"></i> דירוג 5 כוכבים</span>
+                        <div class="badge">
+                            <i class="fas fa-truck"></i>
+                            <span>איסוף והחזרה חינם</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>אחריות ל-90 יום</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-clock"></i>
+                            <span>תיקון תוך 24 שעות</span>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -43,63 +59,77 @@
                 <h2>השירותים שלנו</h2>
                 <div class="service-grid">
                     <div class="service-card">
-                        <i class="fas fa-virus-slash"></i>
+                        <div class="service-icon">
+                            <i class="fas fa-virus-slash"></i>
+                        </div>
                         <h3>הסרת וירוסים</h3>
-                        <p>הסרה מלאה של וירוסים ותוכנות זדוניות לשמירה על ביצועי המחשב</p>
+                        <p>ניקוי מלא של וירוסים ותוכנות זדוניות, כולל התקנת אנטי-וירוס</p>
                     </div>
                     <div class="service-card">
-                        <i class="fas fa-memory"></i>
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-medical"></i>
+                        </div>
                         <h3>תיקוני חומרה</h3>
-                        <p>החלפת מסך, תיקון מקלדת, שדרוג זיכרון ופתרונות חומרה נוספים</p>
+                        <p>החלפת מסך, מקלדת, דיסק קשיח ועוד - עם אחריות מלאה</p>
                     </div>
                     <div class="service-card">
-                        <i class="fas fa-tachometer-alt"></i>
+                        <div class="service-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
                         <h3>שיפור ביצועים</h3>
-                        <p>האצת מחשב איטי באמצעות אופטימיזציה מקצועית</p>
+                        <p>אופטימיזציה מקצועית למחשב איטי, כולל שדרוגי חומרה במידת הצורך</p>
                     </div>
                     <div class="service-card">
-                        <i class="fas fa-database"></i>
+                        <div class="service-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
                         <h3>שחזור מידע</h3>
-                        <p>שחזור מקצועי של קבצים שנמחקו מכל התקן אחסון</p>
+                        <p>שחזור קבצים שנמחקו מכל סוגי הדיסקים והזיכרונות הניידים</p>
                     </div>
                 </div>
             </section>
 
             <section id="pricing" class="pricing">
-                <h2>מחירון שקוף</h2>
+                <h2>חבילות שירות</h2>
                 <div class="pricing-grid">
                     <div class="pricing-card">
-                        <h3>בדיקה מקיפה</h3>
-                        <div class="price">₪199</div>
+                        <div class="pricing-header">
+                            <h3>בדיקה מקיפה</h3>
+                            <div class="price">₪149</div>
+                        </div>
                         <ul>
-                            <li>בדיקת מערכת מלאה</li>
-                            <li>בדיקת חומרה</li>
-                            <li>ניתוח תוכנה</li>
-                            <li>דוח מפורט</li>
+                            <li><i class="fas fa-check"></i> בדיקת חומרה מקיפה</li>
+                            <li><i class="fas fa-check"></i> סריקת וירוסים</li>
+                            <li><i class="fas fa-check"></i> בדיקת ביצועים</li>
+                            <li><i class="fas fa-check"></i> דו"ח מפורט</li>
                         </ul>
-                        <a href="#contact" class="btn">הזמן עכשיו</a>
+                        <a href="#contact" class="btn">הזמן בדיקה</a>
                     </div>
                     <div class="pricing-card featured">
-                        <h3>טיפול מלא</h3>
-                        <div class="price">₪399</div>
+                        <div class="pricing-header">
+                            <h3>חבילה בסיסית</h3>
+                            <div class="price">₪299</div>
+                        </div>
                         <ul>
-                            <li>הסרת וירוסים</li>
-                            <li>אופטימיזציה למערכת</li>
-                            <li>עדכוני תוכנה</li>
-                            <li>גיבוי מידע</li>
+                            <li><i class="fas fa-check"></i> ניקוי וירוסים</li>
+                            <li><i class="fas fa-check"></i> התקנת אנטי-וירוס</li>
+                            <li><i class="fas fa-check"></i> גיבוי מידע</li>
+                            <li><i class="fas fa-check"></i> אופטימיזציה בסיסית</li>
                         </ul>
-                        <a href="#contact" class="btn">הזמן עכשיו</a>
+                        <a href="#contact" class="btn">הזמן תיקון</a>
                     </div>
                     <div class="pricing-card">
-                        <h3>תיקון מותאם</h3>
-                        <div class="price">צור קשר</div>
+                        <div class="pricing-header">
+                            <h3>חבילה מורחבת</h3>
+                            <div class="price">₪499</div>
+                        </div>
                         <ul>
-                            <li>תיקוני חומרה</li>
-                            <li>החלפת חלקים</li>
-                            <li>שחזור מידע</li>
-                            <li>פתרונות מותאמים</li>
+                            <li><i class="fas fa-check"></i> כל השירותים הבסיסיים</li>
+                            <li><i class="fas fa-check"></i> החלפת חלקים</li>
+                            <li><i class="fas fa-check"></i> שדרוג חומרה</li>
+                            <li><i class="fas fa-check"></i> שנה אחריות</li>
                         </ul>
-                        <a href="#contact" class="btn">קבל הצעת מחיר</a>
+                        <a href="#contact" class="btn">הזמן טיפול</a>
                     </div>
                 </div>
             </section>
@@ -109,30 +139,50 @@
                 <div class="contact-container">
                     <div class="contact-info">
                         <h3>פרטי התקשרות</h3>
-                        <p><i class="fas fa-phone"></i> 050-1234567</p>
-                        <p><i class="fas fa-envelope"></i> service@techfixpro.co.il</p>
-                        <p><i class="fas fa-location-dot"></i> רחוב הטכנאי 1, תל אביב</p>
-                        <div class="business-hours">
-                            <h4>שעות פעילות</h4>
-                            <p>ראשון - חמישי: 9:00 - 19:00</p>
-                            <p>שישי: 9:00 - 14:00</p>
-                            <p>שבת: סגור</p>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <p>050-1234567</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>service@technaiad.co.il</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="business-hours">
+                                <p>ימים א'-ה': 09:00-19:00</p>
+                                <p>יום ו': 09:00-14:00</p>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
-                    <form id="contact-form">
-                        <input type="text" name="name" placeholder="שם מלא" required>
-                        <input type="email" name="email" placeholder="אימייל" required>
-                        <input type="tel" name="phone" placeholder="טלפון" required>
-                        <select name="service" required>
-                            <option value="">בחר שירות</option>
-                            <option value="virus">הסרת וירוסים</option>
-                            <option value="hardware">תיקון חומרה</option>
-                            <option value="performance">בעיות ביצועים</option>
-                            <option value="data">שחזור מידע</option>
-                            <option value="other">אחר</option>
-                        </select>
-                        <textarea name="message" placeholder="תאר את הבעיה במחשב" required></textarea>
-                        <button type="submit" class="btn">שלח בקשה</button>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="שם מלא" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="טלפון" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="אימייל" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="service" required>
+                                <option value="">סוג השירות</option>
+                                <option value="virus">הסרת וירוסים</option>
+                                <option value="hardware">תיקון חומרה</option>
+                                <option value="performance">שיפור ביצועים</option>
+                                <option value="data">שחזור מידע</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="תיאור הבעיה" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">שלח פנייה</button>
                     </form>
                 </div>
             </section>
@@ -141,32 +191,29 @@
         <footer>
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>TechFix Pro</h4>
-                    <p>שירותי תיקון מחשבים מקצועיים שאפשר לסמוך עליהם</p>
+                    <img src="images/logo.svg" alt="טכנייד" class="footer-logo">
+                    <p>שירות תיקון מחשבים מקצועי עד הבית</p>
                 </div>
                 <div class="footer-section">
-                    <h4>קישורים מהירים</h4>
+                    <h4>ניווט מהיר</h4>
                     <ul>
-                        <li><a href="#services">שירותים</a></li>
+                        <li><a href="#services">השירותים שלנו</a></li>
                         <li><a href="#pricing">מחירים</a></li>
-                        <li><a href="#contact">צור קשר</a></li>
+                        <li><a href="#contact">יצירת קשר</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>עקבו אחרינו</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    </div>
+                    <h4>אזורי שירות</h4>
+                    <p>תל אביב והמרכז</p>
+                    <p>השרון</p>
+                    <p>ירושלים</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p> 2023 TechFix Pro. </p>
+                <p> 2024 טכנייד. כל הזכויות שמורות.</p>
             </div>
         </footer>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
