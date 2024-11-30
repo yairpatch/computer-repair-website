@@ -22,9 +22,10 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 1rem;
 }
 
 /* Navigation */
@@ -41,13 +42,13 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
-    max-width: 1200px;
+    padding: 0.8rem 1rem;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
 }
@@ -55,7 +56,7 @@ nav {
 nav ul {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 nav ul li a {
@@ -63,6 +64,7 @@ nav ul li a {
     color: var(--text-color);
     font-weight: 500;
     transition: color 0.3s ease;
+    font-size: 0.95rem;
 }
 
 nav ul li a:hover {
@@ -71,7 +73,7 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    padding: 8rem 0 4rem;
+    padding: 5rem 0 3rem;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     text-align: center;
@@ -80,17 +82,18 @@ nav ul li a:hover {
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1.5rem 1rem;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
 .hero-content .subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
     opacity: 0.9;
 }
 
@@ -98,16 +101,18 @@ nav ul li a:hover {
     display: flex;
     gap: 1rem;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .btn {
     display: inline-block;
-    padding: 0.8rem 1.5rem;
+    padding: 0.7rem 1.2rem;
     border-radius: 0.5rem;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
+    font-size: 0.95rem;
 }
 
 .btn-primary {
@@ -121,15 +126,12 @@ nav ul li a:hover {
     border: 2px solid white;
 }
 
-.btn:hover {
-    transform: translateY(-2px);
-}
-
 .trust-badges {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     justify-content: center;
     flex-wrap: wrap;
+    font-size: 0.9rem;
 }
 
 .trust-badges span {
@@ -140,54 +142,64 @@ nav ul li a:hover {
 
 /* Services Section */
 .services {
-    padding: 5rem 0;
+    padding: 3rem 0;
     background-color: var(--background-color);
 }
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding: 2rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem 0;
 }
 
 .service-card {
     background-color: var(--card-background);
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     text-align: center;
     transition: transform 0.3s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
 }
 
 .service-card i {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.service-card h3 {
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.service-card p {
+    font-size: 0.9rem;
+    color: #666;
 }
 
 /* Pricing Section */
 .pricing {
-    padding: 5rem 0;
+    padding: 3rem 0;
     background-color: white;
 }
 
 .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem 0;
 }
 
 .pricing-card {
     background-color: var(--card-background);
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     text-align: center;
     border: 1px solid var(--border-color);
     transition: transform 0.3s ease;
@@ -195,59 +207,72 @@ nav ul li a:hover {
 
 .pricing-card.featured {
     border: 2px solid var(--primary-color);
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .pricing-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
+}
+
+.pricing-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
 }
 
 .pricing-card .price {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--primary-color);
-    margin: 1rem 0;
+    margin: 0.8rem 0;
 }
 
 .pricing-card ul {
     list-style: none;
-    margin: 1.5rem 0;
+    margin: 1.2rem 0;
+    font-size: 0.9rem;
 }
 
 .pricing-card ul li {
-    padding: 0.5rem 0;
+    padding: 0.4rem 0;
     border-bottom: 1px solid var(--border-color);
 }
 
 /* Contact Section */
 .contact {
-    padding: 5rem 0;
+    padding: 3rem 0;
     background-color: var(--background-color);
 }
 
 .contact-container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 2rem;
-    max-width: 1000px;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 800px;
     margin: 0 auto;
 }
 
 .contact-info {
     background-color: var(--card-background);
-    padding: 2rem;
-    border-radius: 1rem;
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    text-align: center;
 }
 
 .contact-info p {
-    margin: 1rem 0;
+    margin: 0.8rem 0;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    justify-content: center;
+    font-size: 0.95rem;
 }
 
 .business-hours {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+}
+
+.business-hours p {
+    font-size: 0.9rem;
 }
 
 .contact form {
@@ -255,21 +280,22 @@ nav ul li a:hover {
     flex-direction: column;
     gap: 1rem;
     background-color: var(--card-background);
-    padding: 2rem;
-    border-radius: 1rem;
+    padding: 1.5rem;
+    border-radius: 0.8rem;
 }
 
 .contact input,
 .contact select,
 .contact textarea {
-    padding: 0.8rem;
+    padding: 0.7rem;
     border: 1px solid var(--border-color);
     border-radius: 0.5rem;
     font-family: inherit;
+    font-size: 0.95rem;
 }
 
 .contact textarea {
-    min-height: 150px;
+    min-height: 120px;
     resize: vertical;
 }
 
@@ -277,26 +303,24 @@ nav ul li a:hover {
 footer {
     background-color: var(--text-color);
     color: white;
-    padding: 3rem 0 1rem;
+    padding: 2rem 0 1rem;
+    font-size: 0.9rem;
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .footer-section h4 {
-    margin-bottom: 1rem;
-}
-
-.footer-section ul {
-    list-style: none;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
 }
 
 .footer-section ul li {
-    margin: 0.5rem 0;
+    margin: 0.4rem 0;
 }
 
 .footer-section ul li a {
@@ -304,54 +328,89 @@ footer {
     text-decoration: none;
     opacity: 0.8;
     transition: opacity 0.3s ease;
-}
-
-.footer-section ul li a:hover {
-    opacity: 1;
+    font-size: 0.9rem;
 }
 
 .social-links {
     display: flex;
     gap: 1rem;
-}
-
-.social-links a {
-    color: white;
-    font-size: 1.5rem;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-}
-
-.social-links a:hover {
-    opacity: 1;
+    justify-content: center;
 }
 
 .footer-bottom {
     text-align: center;
-    padding-top: 2rem;
+    padding-top: 1.5rem;
     border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.85rem;
 }
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .hero-content h1 {
         font-size: 2rem;
+        padding: 0 1rem;
     }
     
     .hero-content .subtitle {
-        font-size: 1.2rem;
-    }
-    
-    .contact-container {
-        grid-template-columns: 1fr;
+        font-size: 1.1rem;
+        padding: 0 1rem;
     }
     
     nav ul {
-        display: none;
+        display: none; /* We'll add a mobile menu later */
+    }
+    
+    .service-grid,
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .contact-container {
+        padding: 0 1rem;
     }
     
     .trust-badges {
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
     }
+    
+    .cta-buttons {
+        flex-direction: column;
+        padding: 0 2rem;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .pricing-card.featured {
+        transform: none;
+    }
+    
+    .footer-content {
+        text-align: center;
+    }
+    
+    .footer-section {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate {
+    animation: fadeIn 0.6s ease forwards;
 }
